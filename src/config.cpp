@@ -1,5 +1,5 @@
 #include "./config.h"
-#include "flash.hpp"
+#include "flash.h"
 Config config;
 
 void config_init() {

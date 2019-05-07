@@ -5,12 +5,10 @@ Author: rise0chen
 Version: 1.0
 Date: 2018.4.26
 Description: 工厂测试模式
-Usage: 
-History: 
-	rise0chen   2018.4.26   编写注释
+Usage:
+History:
+        rise0chen   2018.4.26   编写注释
 *************************************************/
-#include "FCT.hpp"
+#include "FCT.h"
 
-void enterFCTMode() {
-	
-}
+void enterFCTMode() {}

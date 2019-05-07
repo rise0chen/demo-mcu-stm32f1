@@ -440,11 +440,6 @@
               <FilePath>.\src\bsp.cpp</FilePath>
             </File>
             <File>
-              <FileName>it.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\it.c</FilePath>
-            </File>
-            <File>
               <FileName>README.md</FileName>
               <FileType>5</FileType>
               <FilePath>.\README.md</FilePath>
@@ -455,9 +450,9 @@
           <GroupName>function</GroupName>
           <Files>
             <File>
-              <FileName>config.c</FileName>
+              <FileName>config.cpp</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\config.c</FilePath>
+              <FilePath>.\src\config.cpp</FilePath>
             </File>
             <File>
               <FileName>function.cpp</FileName>
@@ -465,9 +460,9 @@
               <FilePath>.\src\function\function.cpp</FilePath>
             </File>
             <File>
-              <FileName>fiipTask.c</FileName>
+              <FileName>fiipTask.cpp</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\function\fiipTask.c</FilePath>
+              <FilePath>.\src\function\fiipTask.cpp</FilePath>
             </File>
             <File>
               <FileName>recvHandle.cpp</FileName>
@@ -490,9 +485,9 @@
           <GroupName>fiip</GroupName>
           <Files>
             <File>
-              <FileName>linkUsart.c</FileName>
+              <FileName>linkUsart.cpp</FileName>
               <FileType>1</FileType>
-              <FilePath>.\lib\fiip-link\linkUsart.c</FilePath>
+              <FilePath>.\lib\fiip-link\linkUsart.cpp</FilePath>
             </File>
             <File>
               <FileName>fiip.c</FileName>
@@ -538,6 +533,11 @@
               <FileName>fiipCloudVar.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\lib\fiip-cloud\fiipCloudVar.c</FilePath>
+            </File>
+            <File>
+              <FileName>fiipCloudListeners.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\fiip-cloud\fiipCloudListeners.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1020,6 +1020,11 @@
               </FileOption>
             </File>
             <File>
+              <FileName>it.cpp</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\system\it.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Rcc.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\lib\system\Rcc.cpp</FilePath>
@@ -1258,6 +1263,11 @@
               <FileName>crc.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\lib\system\crc.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>stdRewrite.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\system\stdRewrite.c</FilePath>
             </File>
           </Files>
         </Group>
