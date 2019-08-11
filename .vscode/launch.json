@@ -14,10 +14,6 @@
       "externalConsole": true, //false
       "MIMode": "gdb",
       "miDebuggerPath": "arm-none-eabi-gdb",
-      //"debugServerPath": "JLinkGDBServer",
-      //"debugServerArgs": "-device STM32F103C8 -If SWD",
-      //"serverLaunchTimeout": 20000,
-      //"serverStarted": "GDB\\ server\\ started",
       "preLaunchTask": "compile",
       "setupCommands": [
         {
