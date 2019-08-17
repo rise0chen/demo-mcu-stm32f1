@@ -10,7 +10,8 @@
       <TargetName>Template</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060422::V5.06 update 4 (build 422)::ARMCC</pCCUsed>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F103C8</Device>
@@ -183,6 +184,7 @@
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
             <RvdsVP>0</RvdsVP>
+            <RvdsMve>0</RvdsMve>
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
@@ -321,8 +323,9 @@
             <Rwpi>0</Rwpi>
             <wLevel>2</wLevel>
             <uThumb>0</uThumb>
-            <uSurpInc>0</uSurpInc>
+            <uSurpInc>1</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>1</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -381,7 +384,7 @@
           <Files>
             <File>
               <FileName>main.cpp</FileName>
-              <FileType>1</FileType>
+              <FileType>8</FileType>
               <FilePath>.\src\main.cpp</FilePath>
               <FileOption>
                 <CommonProperty>
@@ -416,6 +419,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -436,48 +440,38 @@
             </File>
             <File>
               <FileName>bsp.cpp</FileName>
-              <FileType>1</FileType>
+              <FileType>8</FileType>
               <FilePath>.\src\bsp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>config.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\config.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>function.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\function.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>fiipTask.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\fiipTask.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>fiipVars.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\fiipVars.cpp</FilePath>
             </File>
             <File>
               <FileName>README.md</FileName>
               <FileType>5</FileType>
               <FilePath>.\README.md</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>function</GroupName>
-          <Files>
             <File>
-              <FileName>config.cpp</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\config.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>function.cpp</FileName>
+              <FileName>myit.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\src\function\function.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>fiipTask.cpp</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\function\fiipTask.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>recvHandle.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\function\recvHandle.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Ui.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\function\Ui.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>FCT.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\function\FCT.cpp</FilePath>
+              <FilePath>.\src\myit.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -486,13 +480,18 @@
           <Files>
             <File>
               <FileName>linkUsart.cpp</FileName>
-              <FileType>1</FileType>
+              <FileType>8</FileType>
               <FilePath>.\lib\fiip-link\linkUsart.cpp</FilePath>
             </File>
             <File>
               <FileName>fiip.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\lib\fiip-base\fiip.c</FilePath>
+            </File>
+            <File>
+              <FileName>link.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\fiip-base\link\link.c</FilePath>
             </File>
             <File>
               <FileName>route.c</FileName>
@@ -616,6 +615,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -635,14 +635,14 @@
               </FileOption>
             </File>
             <File>
-              <FileName>Task.cpp</FileName>
+              <FileName>task.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\Common\Task.cpp</FilePath>
+              <FilePath>.\lib\Common\task.cpp</FilePath>
             </File>
             <File>
-              <FileName>BufRcv.cpp</FileName>
+              <FileName>bufRcv.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\Common\BufRcv.cpp</FilePath>
+              <FilePath>.\lib\Common\bufRcv.cpp</FilePath>
             </File>
             <File>
               <FileName>protocol.cpp</FileName>
@@ -701,6 +701,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -761,6 +762,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -821,6 +823,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -876,6 +879,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -931,6 +935,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -1001,6 +1006,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -1021,13 +1027,13 @@
             </File>
             <File>
               <FileName>it.cpp</FileName>
-              <FileType>1</FileType>
+              <FileType>8</FileType>
               <FilePath>.\lib\system\it.cpp</FilePath>
             </File>
             <File>
-              <FileName>Rcc.cpp</FileName>
+              <FileName>rcc.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\system\Rcc.cpp</FilePath>
+              <FilePath>.\lib\system\rcc.cpp</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1061,6 +1067,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -1080,9 +1087,9 @@
               </FileOption>
             </File>
             <File>
-              <FileName>Nvic.cpp</FileName>
+              <FileName>nvic.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\system\Nvic.cpp</FilePath>
+              <FilePath>.\lib\system\nvic.cpp</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1116,6 +1123,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -1135,9 +1143,9 @@
               </FileOption>
             </File>
             <File>
-              <FileName>Gpio.cpp</FileName>
+              <FileName>gpio.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\system\Gpio.cpp</FilePath>
+              <FilePath>.\lib\system\gpio.cpp</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1171,6 +1179,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -1200,19 +1209,19 @@
               <FilePath>.\lib\system\exti.cpp</FilePath>
             </File>
             <File>
-              <FileName>Dma.cpp</FileName>
+              <FileName>dma.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\system\Dma.cpp</FilePath>
+              <FilePath>.\lib\system\dma.cpp</FilePath>
             </File>
             <File>
-              <FileName>Adc.cpp</FileName>
+              <FileName>adc.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\system\Adc.cpp</FilePath>
+              <FilePath>.\lib\system\adc.cpp</FilePath>
             </File>
             <File>
-              <FileName>Dac.cpp</FileName>
+              <FileName>dac.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\system\Dac.cpp</FilePath>
+              <FilePath>.\lib\system\dac.cpp</FilePath>
             </File>
             <File>
               <FileName>pwr.cpp</FileName>
@@ -1220,34 +1229,34 @@
               <FilePath>.\lib\system\pwr.cpp</FilePath>
             </File>
             <File>
-              <FileName>Flash.cpp</FileName>
+              <FileName>flash.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\system\Flash.cpp</FilePath>
+              <FilePath>.\lib\system\flash.cpp</FilePath>
             </File>
             <File>
-              <FileName>Tim.cpp</FileName>
+              <FileName>tim.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\system\Tim.cpp</FilePath>
+              <FilePath>.\lib\system\tim.cpp</FilePath>
             </File>
             <File>
-              <FileName>I2c.cpp</FileName>
+              <FileName>i2c.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\system\I2c.cpp</FilePath>
+              <FilePath>.\lib\system\i2c.cpp</FilePath>
             </File>
             <File>
-              <FileName>Spi.cpp</FileName>
+              <FileName>spi.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\system\Spi.cpp</FilePath>
+              <FilePath>.\lib\system\spi.cpp</FilePath>
             </File>
             <File>
-              <FileName>Usart.cpp</FileName>
+              <FileName>usart.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\system\Usart.cpp</FilePath>
+              <FilePath>.\lib\system\usart.cpp</FilePath>
             </File>
             <File>
-              <FileName>Can.cpp</FileName>
+              <FileName>can.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\lib\system\Can.cpp</FilePath>
+              <FilePath>.\lib\system\can.cpp</FilePath>
             </File>
             <File>
               <FileName>wdg.cpp</FileName>
@@ -1359,6 +1368,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -1414,6 +1424,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -1437,5 +1448,11 @@
       </Groups>
     </Target>
   </Targets>
+
+  <RTE>
+    <apis/>
+    <components/>
+    <files/>
+  </RTE>
 
 </Project>

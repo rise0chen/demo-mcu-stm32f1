@@ -11,6 +11,11 @@ History:
 *************************************************/
 #include "./bsp.h"
 
+/***  定义IO口(别忘记在function.h中引用)  ***/
+Gpio LED_RED(PB, 9);
+Gpio LED_GREEN(PB, 8);
+Gpio BTN_LED(PB, 5);
+
 /*************************************************
 Function: setupRCC
 Description: 初始化时钟树
@@ -56,7 +61,10 @@ void setupGPIO(void) {
   RCC->APB2ENR &= ~0x1fc;
 
   /***  用户GPIO(请先在function.cpp中定义)  ***/
-  gpio_default.config(P_PPO);
+  LED_RED.config(P_PPO);
+  LED_GREEN.config(P_PPO);
+  BTN_LED.config(P_DIN);
+  BTN_LED.configExti(RTI);
 }
 
 /*************************************************

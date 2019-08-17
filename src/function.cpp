@@ -1,14 +1,18 @@
 /*************************************************
 Copyright (C), 2018-2028, Crise Tech. Co., Ltd.
-File name: FCT.cpp
+File name: function.cpp
 Author: rise0chen
 Version: 1.0
 Date: 2018.4.26
-Description: 工厂测试模式
-Usage:
+Description: 定义用户函数
 History:
         rise0chen   2018.4.26   编写注释
 *************************************************/
-#include "FCT.h"
+#include "./function.h"
 
-void enterFCTMode() {}
+/*  定义全局变量(别忘记在function.h中引用)  */
+
+/*  定义用户函数(别忘记在function.h中引用)  */
+void switchLed() {
+  *LED_RED.O = !(*LED_RED.I);
+}

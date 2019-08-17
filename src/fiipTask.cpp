@@ -1,6 +1,4 @@
 #include "./fiipTask.h"
-#include "../config.h"
-#include "./function.h"
 #include "fiip-base/fiip.h"
 #include "fiip-cloud/fiipCloud.h"
 #include "fiip-link/linkUsart.h"
@@ -19,7 +17,7 @@ void onGetId(uint8_t* id, uint8_t* key) {
 void onLogin() {
   printf("login success.\n");
 
-  setVar(0x01, 0);
+  fiipVars_setLed(0);
 }
 void onEnterBinding(uint8_t* key) {
   printf("binding code is: %02X%02X%02X%02X.\n", key[0], key[1], key[2],
@@ -36,7 +34,7 @@ void onBeUnbound(uint8_t* id) {
 
 void onTargetChange(uint8_t* id, CloudVarStruct* var) {
   printf("cloud target: %d change %d.\n", var->keyVal[0], var->targetVal[0]);
-  setVar(0x01, var->targetVal[0]);
+  fiipVars_setLed(var->targetVal[0]);
 }
 
 void fiip_connectCloud() {

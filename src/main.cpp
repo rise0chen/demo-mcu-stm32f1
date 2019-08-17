@@ -9,7 +9,8 @@ Usage:
 History:
         rise0chen   2018.4.26   编写注释
 *************************************************/
-#include "bsp.h"
+#include "./bsp.h"
+#include "fiip-cloud/fiipCloud.h"
 
 /*************************************************
 Function: setup
@@ -24,8 +25,8 @@ static void setup(void) {
     pwr::sleep(0);  //休眠
   }
   fiipCloud_login();
-  task.init(1000);                                   // 1000ms(1s)心跳1次
-  task.add(0x01, switchLed, 10, 0xFFFF, 0, 0xFFFF);  // 10秒1次,执行无限次
+  task.init(1000);  // 1000ms(1s)心跳1次
+  // task.add(0x01, switchLed, 10, 0xFFFF, 0, 0xFFFF);  // 10秒1次,执行无限次
   task.add(0x02, fiipCloud_heart, 90, 0xFFFF, 0, 0xFFFF);  // 90秒1次,执行无限次
 
   // iwdg::config(6,1250);
