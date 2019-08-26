@@ -15,6 +15,8 @@ History:
 Gpio LED_RED(PB, 9);
 Gpio LED_GREEN(PB, 8);
 Gpio BTN_LED(PB, 5);
+Gpio DH11_DATA(PA, 4);
+DHT dht11(&DH11_DATA);
 
 /*************************************************
 Function: setupRCC

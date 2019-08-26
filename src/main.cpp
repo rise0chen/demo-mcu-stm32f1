@@ -11,6 +11,7 @@ History:
 *************************************************/
 #include "./bsp.h"
 #include "fiip-cloud/fiipCloud.h"
+#include "wdg.h"
 
 /*************************************************
 Function: setup
@@ -19,17 +20,20 @@ Description: 起始函数(仅执行1次)
 static void setup(void) {
   mempool_init(0x1000);
   config_init();
+  delay_ms(2000);
+
   initFiip();
   if (config.myStatus[1] != 0x89) {  //设备初始化
     fiipCloud_getId(config.myTypeId, config.myTypeKey);
-    pwr::sleep(0);  //休眠
+    pwr::sleep(1);  //休眠
   }
   fiipCloud_login();
   task.init(1000);  // 1000ms(1s)心跳1次
   // task.add(0x01, switchLed, 10, 0xFFFF, 0, 0xFFFF);  // 10秒1次,执行无限次
-  task.add(0x02, fiipCloud_heart, 90, 0xFFFF, 0, 0xFFFF);  // 90秒1次,执行无限次
+  task.add(0x02, fiipCloud_heart, 200, 0xFFFF, 0, 0xFFFF);  // 200秒 无限次
+  task.add(0x03, uploadTempHumi, 600, 0xFFFF, 0, 0xFFFF);  // 10分钟 无限次
 
-  // iwdg::config(6,1250);
+  iwdg::config(6, 1250);  // 8s
 }
 
 /*************************************************
@@ -37,10 +41,9 @@ Function: loop
 Description: 循环函数(无限循环)
 *************************************************/
 static void loop(void) {
-  // iwdg::feed();
+  iwdg::feed();
   task.run();
-
-  // pwr::sleep(0);//休眠
+  pwr::sleep(0);  //休眠
 }
 
 /*************************************************

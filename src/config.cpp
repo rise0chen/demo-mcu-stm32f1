@@ -3,12 +3,15 @@
 Config config;
 
 void config_init() {
-  static uint8_t myTypeId[TypeIdLen] = {0x00, 0x00, 0x02, 0x01};  //智能模块
-  static uint8_t myTypeKey[KeyLen] = {0x2A, 0x64, 0xE8, 0xDA};
+  static uint8_t myTypeId[TypeIdLen] = {0x00, 0x00, 0x03, 0x01};  //智能模块
+  static uint8_t myTypeKey[KeyLen] = {0x7d, 0x4b, 0x99, 0x25};
 
   flash.read(FLASH_ADDR_START, &config, sizeof(config));  //读取设备信息
   mem_cpy(config.myTypeId, myTypeId, TypeIdLen);
   mem_cpy(config.myTypeKey, myTypeKey, KeyLen);
+  if (mem_cmp(config.myId, myTypeId, 4) != 0){
+    config_reset();
+  }
   if (config.myStatus[1] != 0x89) {
     uint8_t* uid = (uint8_t*)malloc(1);
     config.myId[0] = (((int)uid) >> 24) | 0x80;

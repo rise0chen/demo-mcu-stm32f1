@@ -10,11 +10,11 @@
 #include "./config.h"
 #include "./fiipTask.h"
 #include "./fiipVars.h"
-/***    定义IO口    ***/
 
 /***  定义全局变量  ***/
 
 /***  定义用户函数  ***/
 void switchLed(void);
+void uploadTempHumi(void);
 
 #endif  //__FUNCTION_H

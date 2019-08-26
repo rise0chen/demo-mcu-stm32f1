@@ -726,6 +726,11 @@
           <GroupName>hardware</GroupName>
           <Files>
             <File>
+              <FileName>DHT.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\lib\hardware\DHT.cpp</FilePath>
+            </File>
+            <File>
               <FileName>DS18B20.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\lib\hardware\DS18B20.cpp</FilePath>

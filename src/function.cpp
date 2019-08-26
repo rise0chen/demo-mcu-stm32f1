@@ -16,3 +16,7 @@ History:
 void switchLed() {
   *LED_RED.O = !(*LED_RED.I);
 }
+void uploadTempHumi(void) {
+  dht11.getData();
+  fiipVars_setTempHumi(dht11.temp, dht11.humi);
+}

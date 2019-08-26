@@ -18,6 +18,7 @@ void onLogin() {
   printf("login success.\n");
 
   fiipVars_setLed(0);
+  uploadTempHumi();
 }
 void onEnterBinding(uint8_t* key) {
   printf("binding code is: %02X%02X%02X%02X.\n", key[0], key[1], key[2],
@@ -45,7 +46,7 @@ void fiip_connectCloud() {
 }
 
 void initFiip() {
-  fiip_init();
+  fiip_init(0);
   fiip_setId(config.myId);
 
   fiip_connectCloud();
