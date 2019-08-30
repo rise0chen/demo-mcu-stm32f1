@@ -41,6 +41,7 @@ Description: 其他初始化
 *************************************************/
 void setupOther(void) {
   nvic.configGroup(2);  // 2抢占2响应
+  it_init();
 
   map::JTAG(1);  //关闭JTAG,仅使用SWD
 }

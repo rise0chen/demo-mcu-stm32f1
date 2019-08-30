@@ -544,6 +544,11 @@
           <GroupName>riselib</GroupName>
           <Files>
             <File>
+              <FileName>task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\riselib\task.c</FilePath>
+            </File>
+            <File>
               <FileName>flagHandle.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\lib\riselib\flagHandle.c</FilePath>
@@ -633,11 +638,6 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
-            </File>
-            <File>
-              <FileName>task.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\lib\Common\task.cpp</FilePath>
             </File>
             <File>
               <FileName>bufRcv.cpp</FileName>
@@ -1237,6 +1237,11 @@
               <FileName>flash.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\lib\system\flash.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>systick.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\lib\system\systick.cpp</FilePath>
             </File>
             <File>
               <FileName>tim.cpp</FileName>

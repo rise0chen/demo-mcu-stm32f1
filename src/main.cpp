@@ -22,16 +22,20 @@ static void setup(void) {
   config_init();
   delay_ms(2000);
 
+  sysTick_init(500);  // 500ms心跳1次
+  // task.add(0x01, switchLed, 10000 / task_oneTime);  // 10秒1次
+  // task_start(0x02, 0xFFFF, 0, 0xFFFF);  // 执行无限次
+
   initFiip();
   if (config.myStatus[1] != 0x89) {  //设备初始化
     fiipCloud_getId(config.myTypeId, config.myTypeKey);
-    pwr::sleep(1);  //休眠
+  } else {
+    fiipCloud_login();
+    task_add(0x02, fiipCloud_heart, 300000 / task_oneTime);
+    task_start(0x02, 0xFFFF, 0, 0xFFFF);
+    task_add(0x03, uploadTempHumi, 600000 / task_oneTime);
+    task_start(0x03, 0xFFFF, 0, 0xFFFF);
   }
-  fiipCloud_login();
-  task.init(1000);  // 1000ms(1s)心跳1次
-  // task.add(0x01, switchLed, 10, 0xFFFF, 0, 0xFFFF);  // 10秒1次,执行无限次
-  task.add(0x02, fiipCloud_heart, 200, 0xFFFF, 0, 0xFFFF);  // 200秒 无限次
-  task.add(0x03, uploadTempHumi, 600, 0xFFFF, 0, 0xFFFF);  // 10分钟 无限次
 
   iwdg::config(6, 1250);  // 8s
 }
@@ -42,7 +46,8 @@ Description: 循环函数(无限循环)
 *************************************************/
 static void loop(void) {
   iwdg::feed();
-  task.run();
+  task_run();
+  flagHandle_solve();
   pwr::sleep(0);  //休眠
 }
 
