@@ -2,11 +2,10 @@
 #include "fiip-base/fiip.h"
 #include "fiip-cloud/fiipCloud.h"
 #include "fiip-link/linkUsart.h"
-#include "fiip-protocol/stdp.h"
 #include "pwr.h"
 
 void onError(uint8_t err) {
-  printf("stdp error code: %02X.\n", err);
+  printf("fiip error code: %02X.\n", err);
 }
 void onGetId(uint8_t* id, uint8_t* key) {
   config_setMyId(id);

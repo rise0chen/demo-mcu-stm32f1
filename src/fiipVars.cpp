@@ -1,7 +1,6 @@
 #include "./fiipVars.h"
 #include "fiip-base/fiip.h"
 #include "fiip-cloud/fiipCloud.h"
-#include "fiip-protocol/stdp.h"
 
 uint8_t kVal_led[FIIPVAR_LEN] = {0x01};
 uint8_t kVal_tempHumi[FIIPVAR_LEN] = {0x02};

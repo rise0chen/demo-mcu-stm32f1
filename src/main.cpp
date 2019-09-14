@@ -23,10 +23,10 @@ static void setup(void) {
   delay_ms(2000);
 
   sysTick_init(500);  // 500ms心跳1次
-  // task.add(0x01, switchLed, 10000 / task_oneTime);  // 10秒1次
-  // task_start(0x02, 0xFFFF, 0, 0xFFFF);  // 执行无限次
 
   initFiip();
+  task_add(0x01, fiipRetransmit_transmit, 2000 / task_oneTime);
+  task_start(0x01, 0xFFFF, 0, 0xFFFF);
   if (config.myStatus[1] != 0x89) {  //设备初始化
     fiipCloud_getId(config.myTypeId, config.myTypeKey);
   } else {

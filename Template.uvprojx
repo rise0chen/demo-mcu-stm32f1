@@ -479,11 +479,6 @@
           <GroupName>fiip</GroupName>
           <Files>
             <File>
-              <FileName>linkUsart.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\lib\fiip-link\linkUsart.cpp</FilePath>
-            </File>
-            <File>
               <FileName>fiip.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\lib\fiip-base\fiip.c</FilePath>
@@ -514,14 +509,19 @@
               <FilePath>.\lib\fiip-base\frame\format.c</FilePath>
             </File>
             <File>
-              <FileName>stdp.c</FileName>
+              <FileName>fiipListener.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\lib\fiip-protocol\stdp.c</FilePath>
+              <FilePath>.\lib\fiip-base\fiipListener.c</FilePath>
             </File>
             <File>
-              <FileName>stdpFormat.c</FileName>
+              <FileName>fiipRetransmit.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\lib\fiip-protocol\stdpFormat.c</FilePath>
+              <FilePath>.\lib\fiip-base\fiipRetransmit.c</FilePath>
+            </File>
+            <File>
+              <FileName>linkUsart.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\lib\fiip-link\linkUsart.cpp</FilePath>
             </File>
             <File>
               <FileName>fiipCloud.c</FileName>
