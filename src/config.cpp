@@ -1,5 +1,6 @@
 #include "./config.h"
 #include "flash.h"
+#include "randomSeed.h"
 Config config;
 
 void config_init() {
@@ -9,20 +10,18 @@ void config_init() {
   flash.read(FLASH_ADDR_START, &config, sizeof(config));  //读取设备信息
   mem_cpy(config.myTypeId, myTypeId, TypeIdLen);
   mem_cpy(config.myTypeKey, myTypeKey, KeyLen);
-  if (mem_cmp(config.myId, myTypeId, 4) != 0){
+  if (mem_cmp(config.myId, myTypeId, 4) != 0) {
     config_reset();
   }
   if (config.myStatus[1] != 0x89) {
-    uint8_t* uid = (uint8_t*)malloc(1);
-    config.myId[0] = (((int)uid) >> 24) | 0x80;
-    config.myId[1] = ((int)uid) >> 16;
-    config.myId[2] = ((int)uid) >> 8;
-    config.myId[3] = ((int)uid) >> 0;
-    config.myId[4] = ((int)&uid) >> 24;
-    config.myId[5] = ((int)&uid) >> 16;
-    config.myId[6] = ((int)&uid) >> 8;
-    config.myId[7] = ((int)&uid) >> 0;
-    free(uid);
+    config.myId[0] = (uint8_t)randomSeed() | 0x80;
+    config.myId[1] = (uint8_t)randomSeed();
+    config.myId[2] = (uint8_t)randomSeed();
+    config.myId[3] = (uint8_t)randomSeed();
+    config.myId[4] = (uint8_t)randomSeed();
+    config.myId[5] = (uint8_t)randomSeed();
+    config.myId[6] = (uint8_t)randomSeed();
+    config.myId[7] = (uint8_t)randomSeed();
   }
 }
 void config_reset() {
